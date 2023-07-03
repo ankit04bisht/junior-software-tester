@@ -1,0 +1,2 @@
+# junior-software-tester
+assignments
