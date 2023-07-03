@@ -1,0 +1,34 @@
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+
+# Instantiate the Selenium WebDriver
+driver = webdriver.Chrome()
+
+# Open Amazon.in
+driver.get("https://www.amazon.in/")
+
+# Find and interact with the search input field
+search_input = driver.find_element(By.ID, "twotabsearchtextbox")
+search_input.send_keys("wrist watch")
+
+# Submit the search query
+search_input.submit()
+
+# Apply filters for analog display and leather material
+filters = driver.find_elements
+for filter_option in filters:
+    if filter_option.text == "Analog":
+        filter_option.click()
+    elif filter_option.text == "Leather":
+        filter_option.click()
+
+# Apply filter for Titan brand
+driver.find_element(By.LINK_TEXT, "Titan").click()
+
+# Extract and print the results
+results = driver.find_elements
+for result in results:
+    print(result.text)
+
+# Close the browser
+driver.quit()
